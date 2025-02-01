@@ -5,13 +5,10 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/", // Ensure proper asset path resolution
-  resolve: {
-    alias: {
-      "@": path.resolve(path.dirname(fileURLToPath(import.meta.url)), "src"),
-    },
-  },
   build: {
-    outDir: "dist",
+    outDir: "dist", // Ensure the output is in 'dist'
+  },
+  server: {
+    port: 3000,
   },
 });
